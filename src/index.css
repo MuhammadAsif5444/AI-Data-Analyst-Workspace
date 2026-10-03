@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Google+Sans:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --font-sans: "Google Sans", "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-io-blue: #4285f4;
+  --color-io-red: #ea4335;
+  --color-io-yellow: #fbbc04;
+  --color-io-green: #34a853;
+  --surface: rgba(255, 255, 255, 0.76);
+  --surface-strong: rgba(255, 255, 255, 0.92);
+  --line: rgba(15, 23, 42, 0.08);
+  --shadow-soft: 0 18px 50px rgba(15, 23, 42, 0.12);
+}
+
+@layer base {
+  html, body, #root {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background:
+      radial-gradient(circle at top left, rgba(66, 133, 244, 0.18), transparent 32%),
+      radial-gradient(circle at top right, rgba(52, 168, 83, 0.16), transparent 26%),
+      linear-gradient(180deg, #f7f8fb 0%, #eef3fb 100%);
+    color: #0f172a;
+    letter-spacing: -0.01em;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  ::selection {
+    background: rgba(66, 133, 244, 0.18);
+  }
+
+  button, input, textarea {
+    font: inherit;
+  }
+}
+
+@layer utilities {
+  .gradient-io {
+    background: linear-gradient(90deg, #4285f4, #34a853, #fbbc04, #ea4335);
+  }
+
+  .text-gradient-io {
+    background: linear-gradient(90deg, #4285f4, #34a853, #fbbc04, #ea4335);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .surface-card {
+    background: var(--surface-strong);
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    box-shadow: var(--shadow-soft);
+    backdrop-filter: blur(16px);
+  }
+
+  .soft-panel {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
+    backdrop-filter: blur(10px);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+.bg-io-blue {
+  background-color: var(--color-io-blue);
+}
+
+.text-io-blue {
+  color: var(--color-io-blue);
+}
+
+.border-io-blue {
+  border-color: var(--color-io-blue);
+}
+
+.hover\:border-io-blue:hover {
+  border-color: var(--color-io-blue);
+}
+
+.hover\:text-io-blue:hover {
+  color: var(--color-io-blue);
+}
+
+.bg-io-green {
+  background-color: var(--color-io-green);
+}
+
+.text-io-green {
+  color: var(--color-io-green);
+}
+
+.bg-io-red {
+  background-color: var(--color-io-red);
+}
+
+.text-io-red {
+  color: var(--color-io-red);
+}
+
+.bg-io-yellow {
+  background-color: var(--color-io-yellow);
+}
+
+.text-io-yellow {
+  color: var(--color-io-yellow);
+}
+
